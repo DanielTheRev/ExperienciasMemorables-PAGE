@@ -1,5 +1,9 @@
+<main class="page-viewer">
+  <router-outlet></router-outlet>
+</main>
+
 <nav class="sidebar">
-  <ul>
+  <ul class="menu">
     <li>
       <a routerLink="/Home" routerLinkActive="active">Home</a>
     </li>
@@ -9,9 +13,29 @@
     <li>
       <a routerLink="/Galeria" routerLinkActive="active">Galeria</a>
     </li>
+    <li>
+      <a routerLink="/Servicios" routerLinkActive="active">Servicios</a>
+    </li>
+  </ul>
+
+  <ul class="social-links">
+    <li>
+      <span>Siguenos en Facebook</span>
+      <a href="https://www.facebook.com/profile.php?id=100090430041203" target="_blank">
+        <img src="assets/facebook.png" alt="" />
+      </a>
+    </li>
+    <li>
+      <span>Siguenos en Instagram</span>
+      <a href="https://www.instagram.com/experienciasmemorableseventos/" target="_blank">
+        <img src="assets/instagram.png" alt="" />
+      </a>
+    </li>
+    <li>
+      <span>Contactanos en Whatsapp</span>
+      <a href="https://wa.me/5491157539816/?text=Buenas tardes" target="_blank">
+        <img src="assets/whatsapp.png" alt="" />
+      </a>
+    </li>
   </ul>
 </nav>
-
-<main class="page-viewer">
-  <router-outlet></router-outlet>
-</main>

@@ -1,0 +1,45 @@
+<h1 class="text-white">Nuestros Servicios</h1>
+<swiper
+  [slidesPerView]="1"
+  [pagination]="true"
+  navigation
+  effect="fade"
+  [autoplay]="{
+    delay: 2000,
+    disableOnInteraction: true
+  }"
+  class="services"
+>
+  <ng-template swiperSlide *ngFor="let service of services; index as i">
+    <div class="service">
+      <h2 class="text-white">{{ service.name }}</h2>
+      <p class="text-white">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ad nisi
+        quia neque, maxime maiores harum ducimus quo libero. Nulla, accusantium
+        quod! Fugit provident animi itaque? Repellat accusantium aperiam
+        possimus? Facere iure quisquam adipisci officiis. Magni aspernatur quia
+        nesciunt, dignissimos ab harum dolore. Voluptatem modi similique,
+        maiores placeat hic, mollitia corporis velit doloremque sunt
+        necessitatibus dignissimos excepturi atque nam quo! Nesciunt rem
+        corrupti expedita aliquid ipsa recusandae error nisi culpa sed doloribus
+        voluptates sequi unde fugit voluptas perspiciatis odit nulla in maxime,
+        ab minima vero, enim officia necessitatibus. Id, mollitia. Voluptatibus
+        voluptas facilis cupiditate praesentium officia. Reprehenderit
+        laudantium illum rem at omnis, optio officia dolor id amet doloribus
+        fugiat repellendus ea harum, dolorum hic necessitatibus vitae delectus
+        sit obcaecati ipsam? Animi commodi repellat quibusdam aliquam aut
+        voluptas voluptates nobis dolores nam eum placeat facilis sint dolorum
+        dicta cumque odio accusantium aliquid delectus, et quis. Quos, maxime
+        iste! Nostrum, aperiam ipsa.
+      </p>
+      <div class="img-container">
+        <img
+          [ngSrc]="'https://picsum.photos/1920/1080/?random=' + (i + 1)"
+          alt=""
+          fill
+          priority
+        />
+      </div>
+    </div>
+  </ng-template>
+</swiper>

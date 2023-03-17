@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,10 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { GaleriaComponent } from './pages/galeria/galeria.component';
+import { IonicModule } from '@ionic/angular';
+import { ImgBackgroundComponent } from './pages/home/components/img-background/img-background.component';
+import { ServiciosComponent } from './pages/servicios/servicios.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -15,14 +20,19 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
     LayoutComponent,
     HomeComponent,
     NosotrosComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    ImgBackgroundComponent,
+    ServiciosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    IonicModule.forRoot(),
+    NgOptimizedImage,
+    SwiperModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
