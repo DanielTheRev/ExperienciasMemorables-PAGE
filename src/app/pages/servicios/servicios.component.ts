@@ -15,6 +15,7 @@ SwiperCore.use([
   EffectCoverflow,
   Autoplay,
 ]);
+
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.component.html',
