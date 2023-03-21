@@ -1,20 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  EffectCoverflow,
-  Autoplay,
-} from 'swiper';
-SwiperCore.use([
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  EffectCoverflow,
-  Autoplay,
-]);
+
+interface Service {
+  id?: string;
+  name: string;
+  img: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-servicios',
@@ -22,7 +13,8 @@ SwiperCore.use([
   styleUrls: ['./servicios.component.scss'],
 })
 export class ServiciosComponent implements OnInit {
-  services: { name: string; img: string; description: string }[] = [];
+  services: Service[] = [];
+  serviceSelected: Service | null = null;
 
   ngOnInit(): void {
     this.services = [
@@ -72,5 +64,13 @@ export class ServiciosComponent implements OnInit {
         description: '',
       },
     ];
+  }
+
+  setService(Service: Service) {
+    this.serviceSelected = Service;
+  }
+
+  clearSelectedService() {
+    this.serviceSelected = null;
   }
 }

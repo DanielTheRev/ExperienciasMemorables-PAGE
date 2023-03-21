@@ -8,11 +8,11 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
-import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { IonicModule } from '@ionic/angular';
 import { ImgBackgroundComponent } from './pages/home/components/img-background/img-background.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { SwiperModule } from 'swiper/angular';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +20,9 @@ import { SwiperModule } from 'swiper/angular';
     LayoutComponent,
     HomeComponent,
     NosotrosComponent,
-    GaleriaComponent,
     ImgBackgroundComponent,
     ServiciosComponent,
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +30,7 @@ import { SwiperModule } from 'swiper/angular';
     RouterModule,
     IonicModule.forRoot(),
     NgOptimizedImage,
-    SwiperModule
+    SwiperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

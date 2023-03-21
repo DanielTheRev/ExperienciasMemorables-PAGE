@@ -1,5 +1,5 @@
 <h1 class="text-white">Nuestros Servicios</h1>
-<swiper
+<!-- <swiper
   [slidesPerView]="1"
   [pagination]="true"
   navigation
@@ -44,4 +44,30 @@
       </div>
     </div>
   </ng-template>
-</swiper>
+</swiper> -->
+
+<div class="services">
+  <div
+    class="service"
+    *ngFor="let service of services"
+    (click)="setService(service)"
+  >
+    <div class="icon">
+      <img
+        [src]="'assets/service_icons/' + service.name.toString() + '.png'"
+        alt=""
+      />
+    </div>
+    <h5 class="title">{{ service.name }}</h5>
+  </div>
+</div>
+
+<div class="service-description" *ngIf="serviceSelected">
+  <button class="icon" (click)="clearSelectedService()">
+    <ion-icon name="close-circle-outline"></ion-icon>
+  </button>
+  <img
+    [src]="'assets/service_icons/' + serviceSelected.name.toString() + '.png'"
+    alt=""
+  />
+</div>
