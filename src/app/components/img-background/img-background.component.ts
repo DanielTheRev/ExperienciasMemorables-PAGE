@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ImgBackgroud } from '../../intefaces/imgbackground.interface';
-import { ImgsBackgroundService } from '../../services/imgs-background.service';
+import { ImgsBackgroundService } from "../../services/imgs-background.service";
 
 @Component({
   selector: 'app-img-background',
   templateUrl: './img-background.component.html',
   styleUrls: ['./img-background.component.scss'],
 })
-export class ImgBackgroundComponent {
+export class ImgBackgroundComponent implements OnInit {
   Images: ImgBackgroud[] = [];
+  ImgsBackgroundService = inject(ImgsBackgroundService);
 
-  constructor(private ImgsBackgroundService: ImgsBackgroundService) {
+  ngOnInit() {
     this.ImgsBackgroundService.ImgsBackground$.subscribe({
       next: (res) => {
         this.Images = res;

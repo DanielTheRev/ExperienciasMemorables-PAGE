@@ -1,9 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  EffectCoverflow,
+  Autoplay,
+} from 'swiper';
 
+// install Swiper components
+SwiperCore.use([
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  EffectCoverflow,
+  Autoplay,
+]);
 interface Service {
   id?: string;
   name: string;
-  img: string;
+  img: any[];
   description: string;
 }
 
@@ -19,48 +36,114 @@ export class ServiciosComponent implements OnInit {
   ngOnInit(): void {
     this.services = [
       {
-        name: 'Servicio de Catering',
-        img: '',
-        description: '',
+        name: 'Catering',
+        img: [
+          {
+            src: 'service_background/Catering/image 1.jpeg',
+          },
+          {
+            src: 'service_background/Catering/image 2.jpeg',
+          },
+          {
+            src: 'service_background/Catering/image 3.jpeg',
+          },
+          {
+            src: 'service_background/Catering/image 4.jpeg',
+          },
+          {
+            src: 'service_background/Catering/image 5.jpeg',
+          },
+          {
+            src: 'service_background/Catering/image 6.jpeg',
+          },
+        ],
+        description: '', 
       },
       {
-        name: 'Organización integral del evento',
-        img: '',
+        name: 'Planificación',
+        img: [],
         description: '',
       },
       {
         name: 'Barra de tragos',
-        img: '',
+        img: [],
         description: '',
       },
       {
         name: 'Ambientación, sonido e iluminación',
-        img: '',
+        img: [
+          {
+            src: 'service_background/Ambientación, sonido e iluminación/image 1.jpeg',
+          },
+          {
+            src: 'service_background/Ambientación, sonido e iluminación/image 2.jpeg',
+          },
+          {
+            src: 'service_background/Ambientación, sonido e iluminación/image 3.jpeg',
+          },
+          {
+            src: 'service_background/Ambientación, sonido e iluminación/image 4.jpeg',
+          },
+          {
+            src: 'service_background/Ambientación, sonido e iluminación/image 5.jpeg',
+          },
+          {
+            src: 'service_background/Ambientación, sonido e iluminación/image 6.jpeg',
+          },
+        ],
         description: '',
       },
       {
         name: "Dj's",
-        img: '',
+        img: [
+          {
+            src: "service_background/Dj's/image 1.jpeg",
+          },
+        ],
         description: '',
       },
       {
         name: 'Actividades recreativas',
-        img: '',
+        img: [],
         description: '',
       },
       {
-        name: 'Salones',
-        img: '',
+        name: 'Espacio exterior',
+        img: [
+          {
+            src: 'service_background/Espacio exterior/image 1.jpeg',
+          },
+          {
+            src: 'service_background/Espacio exterior/image 2.jpeg',
+          },
+          {
+            src: 'service_background/Espacio exterior/image 3.jpeg',
+          },
+          {
+            src: 'service_background/Espacio exterior/image 4.jpeg',
+          },
+          {
+            src: 'service_background/Espacio exterior/image 5.jpeg',
+          },
+          {
+            src: 'service_background/Espacio exterior/image 6.jpeg',
+          },
+        ],
         description: '',
       },
       {
         name: 'Fotografía y video',
-        img: '',
+        img: [],
         description: '',
       },
       {
         name: 'Show',
-        img: '',
+        img: [],
+        description: '',
+      },
+      {
+        name: 'Tematicas',
+        img: [],
         description: '',
       },
     ];

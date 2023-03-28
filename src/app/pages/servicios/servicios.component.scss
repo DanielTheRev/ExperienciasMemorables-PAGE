@@ -9,6 +9,11 @@
   place-items: center;
 }
 
+.title {
+  color: #fff;
+  font-weight: bold;
+}
+
 .services {
   display: flex;
   width: 100%;
@@ -26,7 +31,9 @@
     grid-template-rows: 2fr 1fr;
     justify-items: center;
     align-items: center;
-    cursor: pointer;
+    &.cursor_pointer {
+      cursor: pointer !important;
+    }
     .icon {
       position: relative;
       display: flex;
@@ -49,9 +56,6 @@
         border-radius: 50%;
       }
       img {
-        // position: absolute;
-        // top: 0px;
-        // left: 0px;
         display: block;
         width: 90%;
         height: 90%;
@@ -68,21 +72,51 @@
 
 .service-description {
   position: absolute;
-  display: grid;
+  display: flex;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
-  place-content: center;
   background-color: #fff;
   animation: showService linear 1s;
-  .icon {
+  .icon_close {
     position: absolute;
     top: 5px;
     right: 5px;
     font-size: 3.5rem;
     background-color: transparent;
     color: rgb(247, 82, 82);
+    z-index: 3;
+  }
+  .carousel {
+    width: 100%;
+    height: 100%;
+  }
+  .service_imgs {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: max-content 1fr;
+    text-align: center;
+    .info {
+      .service_name {
+        font-weight: bold;
+      }
+    }
+    .img-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 }
 

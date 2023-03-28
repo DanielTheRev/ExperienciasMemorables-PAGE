@@ -1,4 +1,4 @@
-<h1 class="text-white">Nuestros Servicios</h1>
+<h1 class="title">Nuestros Servicios</h1>
 <!-- <swiper
   [slidesPerView]="1"
   [pagination]="true"
@@ -51,6 +51,7 @@
     class="service"
     *ngFor="let service of services"
     (click)="setService(service)"
+    [ngClass]="{ cursor_pointer: service.img.length > 0 }"
   >
     <div class="icon">
       <img
@@ -62,12 +63,36 @@
   </div>
 </div>
 
-<div class="service-description" *ngIf="serviceSelected">
-  <button class="icon" (click)="clearSelectedService()">
+<div
+  class="service-description"
+  *ngIf="serviceSelected && serviceSelected.img.length > 0"
+>
+  <button class="icon_close" (click)="clearSelectedService()">
     <ion-icon name="close-circle-outline"></ion-icon>
   </button>
-  <img
-    [src]="'assets/service_icons/' + serviceSelected.name.toString() + '.png'"
-    alt=""
-  />
+  <swiper
+    [slidesPerView]="1"
+    [pagination]="true"
+    navigation
+    effect="fade"
+    [autoplay]="{
+      delay: 4000,
+      disableOnInteraction: true
+    }"
+    class="carousel"
+  >
+    <ng-template
+      swiperSlide
+      *ngFor="let img of serviceSelected.img; index as i"
+    >
+      <div class="service_imgs">
+        <div class="info">
+          <h1 class="service_name">{{ serviceSelected.name }}</h1>
+        </div>
+        <div class="img-container">
+          <img [ngSrc]="'assets/' + img.src" alt="" fill priority />
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
 </div>

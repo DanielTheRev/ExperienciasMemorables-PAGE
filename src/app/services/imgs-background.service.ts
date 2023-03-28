@@ -15,7 +15,7 @@ export class ImgsBackgroundService {
       .fill(0)
       .forEach((e, i) => {
         const img: ImgBackgroud = {
-          src: `https://picsum.photos/1920/?random=${i + 1}`,
+          src: `assets/home_background_imgs/image ${i + 1}.jpeg`,
         };
         images.push(img);
       });
