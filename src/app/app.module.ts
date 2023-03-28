@@ -25,7 +25,7 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     ContactoComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     RouterModule,
     IonicModule.forRoot(),

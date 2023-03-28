@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/experiencias-memorables-page",
+            "outputPath": "dist/ExperienciasMemorablesPage/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -171,6 +171,66 @@
               "browserTarget": "ExperienciasMemorablesPage:build:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/ExperienciasMemorablesPage/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ],
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "ExperienciasMemorablesPage:build:development",
+              "serverTarget": "ExperienciasMemorablesPage:server:development"
+            },
+            "production": {
+              "browserTarget": "ExperienciasMemorablesPage:build:production",
+              "serverTarget": "ExperienciasMemorablesPage:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ExperienciasMemorablesPage:build:production",
+              "serverTarget": "ExperienciasMemorablesPage:server:production"
+            },
+            "development": {
+              "browserTarget": "ExperienciasMemorablesPage:build:development",
+              "serverTarget": "ExperienciasMemorablesPage:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
