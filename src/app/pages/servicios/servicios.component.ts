@@ -57,7 +57,7 @@ export class ServiciosComponent implements OnInit {
             src: 'service_background/Catering/image 6.jpeg',
           },
         ],
-        description: '', 
+        description: '',
       },
       {
         name: 'Planificación',
@@ -150,7 +150,9 @@ export class ServiciosComponent implements OnInit {
   }
 
   setService(Service: Service) {
-    this.serviceSelected = Service;
+    if (Service.img.length > 0) {
+      this.serviceSelected = Service;
+    }
   }
 
   clearSelectedService() {

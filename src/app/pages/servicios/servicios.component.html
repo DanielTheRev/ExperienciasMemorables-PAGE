@@ -46,7 +46,7 @@
   </ng-template>
 </swiper> -->
 
-<div class="services">
+<div class="services" *ngIf="!serviceSelected">
   <div
     class="service"
     *ngFor="let service of services"

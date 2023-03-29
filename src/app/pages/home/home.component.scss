@@ -9,20 +9,16 @@
 
 .welcome {
   display: flex;
-  width: 550px;
-  height: 550px;
+  width: 31.25rem;
+  height: 31.25rem;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 10px #333;
   z-index: 2;
   background-image: url(/assets/logo.jpg);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   align-items: flex-end;
   justify-content: flex-end;
-  @media (max-width: 576px) {
-    width: 350px;
-    height: 250px;
-  }
 
   .next-icon {
     transition: all 0.5s;
