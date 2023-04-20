@@ -1,5 +1,5 @@
-<div class="img-background" *ngIf="Images.length > 0">
-  <div class="img-container" *ngFor="let img of Images">
-    <img [ngSrc]="img.src" fill priority />
+<div class="img-background" *ngIf="!Images.isEmpty">
+  <div class="img-container" *ngFor="let img of Images.data">
+    <app-image-loader [img]="img"></app-image-loader>
   </div>
 </div>

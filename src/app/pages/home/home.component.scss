@@ -25,8 +25,13 @@
     font-size: 3rem;
     padding: 0px 1rem;
     color: #ccc;
-    &:hover {
-      color: var(--bs-warning);
+    svg {
+      width: 50px;
+      fill: #ccc;
+      transition: fill 0.5s;
+      &:hover {
+        fill: #fff;
+      }
     }
   }
 }

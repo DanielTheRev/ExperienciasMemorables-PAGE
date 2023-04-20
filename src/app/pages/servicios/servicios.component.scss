@@ -89,6 +89,10 @@
     color: rgb(247, 82, 82);
     z-index: 3;
     border: none;
+    cursor: pointer;
+    svg {
+      width: 50px;
+    }
   }
   .carousel {
     width: 100%;

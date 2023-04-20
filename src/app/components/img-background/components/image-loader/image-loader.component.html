@@ -1,0 +1,8 @@
+<img
+  *ngIf="img"
+  [ngSrc]="img.src.secure_url"
+  fill
+  priority
+  [id]="img._id"
+  (load)="imageState($event, img._id!)"
+/>

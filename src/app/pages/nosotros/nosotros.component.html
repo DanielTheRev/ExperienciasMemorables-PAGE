@@ -1,17 +1,20 @@
-<header>
-  <blockquote>
-    "Nuestro concepto se basa en la creación de momentos especiales de acuerdo a
-    las necesidades de cada cliente"
-  </blockquote>
-</header>
+<div
+  class="wrapper"
+  *ngIf="NosotrosData"
+  [ngStyle]="{
+    'background-image': 'url(' + NosotrosData.imageUrl.secure_url + ')'
+  }"
+>
+  <header>
+    <blockquote>
+      {{ NosotrosData.frase }}
+    </blockquote>
+  </header>
 
-<div class="text-container">
-  <img src="assets/logo.jpg" />
-  <p>
-    En Experiencias Memorables Eventos creemos en lo que hacemos y estamos
-    convencidos de que hay una sola manera de hacer las cosas y es hacerlas
-    bien. Esta empresa se dedica hace mas de una decada a brindar servicios de
-    catering / organizacion integral para eventos, llevando hasta su celebración
-    de excelencia y garantía de que todo saldrá según lo previsto.
-  </p>
+  <div class="text-container">
+    <img src="assets/logo.jpg" />
+    <p>
+      {{ NosotrosData.presentacion }}
+    </p>
+  </div>
 </div>

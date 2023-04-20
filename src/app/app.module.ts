@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { ImgBackgroundComponent } from './components/img-background/img-backgrou
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { SwiperModule } from 'swiper/angular';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ImageLoaderComponent } from './components/img-background/components/image-loader/image-loader.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     ImgBackgroundComponent,
     ServiciosComponent,
     ContactoComponent,
+    ImageLoaderComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -31,6 +35,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     IonicModule.forRoot(),
     NgOptimizedImage,
     SwiperModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

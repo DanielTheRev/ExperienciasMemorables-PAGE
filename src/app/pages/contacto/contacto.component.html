@@ -4,18 +4,25 @@
 
 <div class="wrapper">
   <img src="/assets/logo.jpg" />
-  <div class="form">
-    <h1>Contacto</h1>
-    <form>
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" name="name" required />
 
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required />
+  <div class="form">
+    <div class="request-message" *ngIf="requestMessage.show">
+      {{ requestMessage.message }}
+    </div>
+    <h1>Contacto</h1>
+    <form [formGroup]="form" (ngSubmit)="enviarConsulta()">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" formControlName="nombre" />
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="correo" id="correo" name="correo" formControlName="correo" />
 
       <label for="message">Consulta:</label>
-      <textarea id="message" name="message" required></textarea>
-
+      <textarea
+        id="message"
+        name="message"
+        formControlName="message"
+      ></textarea>
       <input type="submit" value="Enviar" />
     </form>
   </div>

@@ -1,4 +1,10 @@
 :host {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
   position: relative;
   display: grid;
   width: 100%;
@@ -6,54 +12,51 @@
   grid-template-columns: 100%;
   grid-template-rows: 1fr 3fr;
   place-content: center;
-  // background: linear-gradient(to right, #7474bf, #348ac7);
-  background-image: url(/assets/ExperienciasMemorables.jpg);
   background-position: center;
   background-size: cover;
   justify-items: center;
+  header {
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+    blockquote {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-shadow: 0px 0px 8px #333, 0px 2px 8px #333, 8px 0px 8px #333,
+        3px 8px 8px #333;
+    }
+  }
+
+  .text-container {
+    position: relative;
+    display: flex;
+    width: 31.25rem;
+    height: 31.25rem;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    img {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+      z-index: 1;
+    }
+    p {
+      position: relative;
+      text-align: justify;
+      text-shadow: 0px 0px 8px #333, 0px 2px 8px #333, 8px 0px 8px #333,
+        3px 8px 8px #333;
+      z-index: 2;
+    }
+  }
   @media (max-width: 576px) {
     grid-template-rows: max-content 1fr;
-  }
-}
-
-header {
-  display: grid;
-  place-content: center;
-  padding: 1rem;
-  blockquote {
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-shadow: 0px 0px 8px #333, 0px 2px 8px #333, 8px 0px 8px #333,
-      3px 8px 8px #333;
-  }
-}
-
-.text-container {
-  position: relative;
-  display: flex;
-  width: 31.25rem;
-  height: 31.25rem;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 2rem;
-  justify-content: center;
-  align-items: center;
-  img {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-    z-index: 1;
-  }
-  p {
-    position: relative;
-    text-align: justify;
-    text-shadow: 0px 0px 8px #333, 0px 2px 8px #333, 8px 0px 8px #333,
-    3px 8px 8px #333;
-    z-index: 2;
   }
 }

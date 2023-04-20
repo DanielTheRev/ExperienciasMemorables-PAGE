@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ImgBackgroud } from '../../intefaces/imgbackground.interface';
-import { ImgsBackgroundService } from "../../services/imgs-background.service";
+import { ImgBG, ImgBgData } from '../../interfaces/imgbackground.interface';
+import { ImgsBackgroundStoreService } from './store/imgs-background.store.service';
 
 @Component({
   selector: 'app-img-background',
@@ -8,8 +8,11 @@ import { ImgsBackgroundService } from "../../services/imgs-background.service";
   styleUrls: ['./img-background.component.scss'],
 })
 export class ImgBackgroundComponent implements OnInit {
-  Images: ImgBackgroud[] = [];
-  ImgsBackgroundService = inject(ImgsBackgroundService);
+  Images: ImgBgData = {
+    data: [],
+    isEmpty: false,
+  };
+  ImgsBackgroundService = inject(ImgsBackgroundStoreService);
 
   ngOnInit() {
     this.ImgsBackgroundService.ImgsBackground$.subscribe({
