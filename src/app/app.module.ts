@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
-import { IonicModule } from '@ionic/angular';
 import { ImgBackgroundComponent } from './components/img-background/img-background.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { SwiperModule } from 'swiper/angular';
@@ -32,11 +31,10 @@ import { ImageLoaderComponent } from './components/img-background/components/ima
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     RouterModule,
-    IonicModule.forRoot(),
     NgOptimizedImage,
     SwiperModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
