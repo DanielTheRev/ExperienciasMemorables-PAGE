@@ -1,5 +1,7 @@
-<h1 class="title">Nuestros Servicios</h1>
-<div class="services" *ngIf="!serviceSelected">
+<header>
+  <h1 class="title">Nuestros Servicios</h1>
+</header>
+<section class="services" *ngIf="!serviceSelected">
   <div
     class="service"
     *ngFor="let service of services.data"
@@ -8,13 +10,13 @@
   >
     <div class="icon">
       <img
-        [src]="'assets/service_icons/' + service.name.toString() + '.png'"
-        alt=""
+        [src]='service.icon.secure_url'
+        [alt]="service.name + ' icon'"
       />
     </div>
     <h5 class="title">{{ service.name }}</h5>
   </div>
-</div>
+</section>
 
 <div
   class="service-description"
@@ -60,7 +62,7 @@
           <h1 class="service_name">{{ serviceSelected.name }}</h1>
         </div>
         <div class="img-container">
-          <img [ngSrc]="img.secure_url" alt="" fill priority />
+          <img [ngSrc]="img.secure_url" [alt]="serviceSelected.name + ' image' " fill priority />
         </div>
       </div>
     </ng-template>

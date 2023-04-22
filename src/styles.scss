@@ -6,10 +6,25 @@
   margin: 0px;
   box-sizing: border-box;
 }
-
-@media (max-width: 576px) {
+@media (max-width: 400px) {
+  html {
+    font-size: 10px !important;
+  }
+}
+@media (max-width: 578px) {
   html {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1400px) {
+  html {
+    font-size: 18px;
   }
 }
 

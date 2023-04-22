@@ -15,13 +15,17 @@
   display: grid;
   filter: blur(1px);
   grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
-  // grid-auto-rows: 355px;
   @media (max-width: 576px) {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    // grid-auto-rows: 150px;  
+  }
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  }
+  @media (min-width: 1400px) {
+    grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
   }
   .img-container {
-    position: relative; 
+    position: relative;
     width: 100%;
     height: 100%;
   }
